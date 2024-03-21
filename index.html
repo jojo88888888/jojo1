@@ -64,22 +64,24 @@
 
 <div class="container">
   <div class="image-container">
-    <a href="https://www.yahoo.com.tw" target="_blank" id="yahoo-link">
+    <a href="https://www.yahoo.com.tw" target="_blank">
       <img src="img/1.jpg" alt="Image 1">
     </a>
-    <a href="https://www.yahoo.com.tw" target="_blank" id="yahoo-link">
+    <a href="https://www.yahoo.com.tw" target="_blank">
       <img src="img/2.png" alt="Image 2">
     </a>
-    <a href="https://www.yahoo.com.tw" target="_blank" id="yahoo-link">
+    <a href="https://www.yahoo.com.tw" target="_blank">
       <img src="img/3.png" alt="Image 3">
     </a>
-    <a href="https://www.yahoo.com.tw" target="_blank" id="yahoo-link">
+    <a href="https://www.yahoo.com.tw" target="_blank">
       <img src="img/4.png" alt="Image 4">
     </a>
   </div>
 </div>
 
-<img class="bottom-image" src="img/Buttons.png" alt="Image 5">
+<a href="https://www.yahoo.com.tw" target="_blank">
+  <img class="bottom-image" src="img/Buttons.png" alt="Image 5">
+</a>
 
 <script>
   // Get the container element
@@ -89,11 +91,11 @@
   container.addEventListener('click', function(event) {
     // Check if the click occurred on the left half of the container
     if (event.clientX < container.clientWidth / 2) {
-      // Redirect to Yahoo
-      window.location.href = "https://www.yahoo.com.tw";
+      // Open Yahoo in a new tab
+      window.open("https://www.yahoo.com.tw", "_blank");
     } else {
-      // Redirect to Google
-      window.location.href = "https://www.google.com";
+      // Open Google in a new tab
+      window.open("https://www.google.com", "_blank");
     }
   });
 </script>
