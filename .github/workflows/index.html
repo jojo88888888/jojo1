@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vertical Image Gallery</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .image-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0; /* Set gap to 0 to remove spacing between images */
+  }
+  
+  .image-container img {
+    width: 100%; /* 设置宽度为100% */
+    height: auto; /* 根据宽度自适应高度 */
+    display: block;
+    margin: 0 auto;
+    max-width: 300px; /* 设置最大宽度 */
+    height: auto; /* 根据宽度自适应高度 */
+  }
+  
+  .bottom-image {
+    width: 100%; /* 设置宽度为100% */
+    height: auto; /* 根据宽度自适应高度 */
+    display: block;
+    margin: 0 auto;
+    max-width: 300px; /* 设置最大宽度 */
+    height: auto; /* 根据宽度自适应高度 */
+    position: fixed; /* 设置固定定位 */
+    bottom: 0; /* 悬浮在底部 */
+    left: 50%; /* 水平居中 */
+    transform: translateX(-50%); /* 调整位置至水平居中 */
+    z-index: 999; /* 设置层级，确保在最前面 */
+  }
+
+  /* 媒体查询，适应小屏幕设备 */
+  @media only screen and (max-width: 600px) {
+    .image-container img {
+      max-width: 100%; /* 在小屏幕上，将最大宽度设置为100% */
+    }
+    .bottom-image {
+      max-width: 100%; /* 在小屏幕上，将最大宽度设置为100% */
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="image-container">
+    <a href="https://www.yahoo.com.tw" target="_blank" id="yahoo-link">
+      <img src="img/1.jpg" alt="Image 1">
+    </a>
+    <a href="https://www.yahoo.com.tw" target="_blank" id="yahoo-link">
+      <img src="img/2.png" alt="Image 2">
+    </a>
+    <a href="https://www.yahoo.com.tw" target="_blank" id="yahoo-link">
+      <img src="img/3.png" alt="Image 3">
+    </a>
+    <a href="https://www.yahoo.com.tw" target="_blank" id="yahoo-link">
+      <img src="img/4.png" alt="Image 4">
+    </a>
+  </div>
+</div>
+
+<img class="bottom-image" src="img/Buttons.png" alt="Image 5">
+
+<script>
+  // Get the container element
+  var container = document.querySelector('.container');
+
+  // Add click event listener to the container
+  container.addEventListener('click', function(event) {
+    // Check if the click occurred on the left half of the container
+    if (event.clientX < container.clientWidth / 2) {
+      // Redirect to Yahoo
+      window.location.href = "https://www.yahoo.com.tw";
+    } else {
+      // Redirect to Google
+      window.location.href = "https://www.google.com";
+    }
+  });
+</script>
+
+</body>
+</html>
