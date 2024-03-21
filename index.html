@@ -84,13 +84,13 @@
 </a>
 
 <script>
-  // Get the container element
-  var container = document.querySelector('.container');
+  // Get the bottom image element
+  var bottomImage = document.querySelector('.bottom-image');
 
-  // Add click event listener to the container
-  container.addEventListener('click', function(event) {
-    // Check if the click occurred on the left half of the container
-    if (event.clientX < container.clientWidth / 2) {
+  // Add click event listener to the bottom image
+  bottomImage.addEventListener('click', function(event) {
+    // Check if the click occurred on the left half of the bottom image
+    if (event.clientX < bottomImage.clientWidth / 2) {
       // Open Yahoo in a new tab
       window.open("https://www.yahoo.com.tw", "_blank");
     } else {
