@@ -64,46 +64,39 @@
 
 <div class="container">
   <div class="image-container">
-    <a>
+    <a href="javascript:void(0);" id="google-link-1">
       <img src="img/1.jpg" alt="Image 1">
     </a>
-    <a>
+    <a href="javascript:void(0);" id="google-link-2">
       <img src="img/2.png" alt="Image 2">
     </a>
-    <a>
+    <a href="javascript:void(0);" id="google-link-3">
       <img src="img/3.png" alt="Image 3">
-    </a>
-    <a>
-      <img src="img/4.png" alt="Image 4">
     </a>
   </div>
 </div>
 
-<!-- 取消底部图片链接的默认点击行为 -->
-<div id="bottom-image">
-  <img class="bottom-image" src="img/Buttons.png" alt="Image 5">
-</div>
+<a href="javascript:void(0);" id="bottom-image-link">
+  <img class="bottom-image" src="img/Buttons.png" alt="Image 4">
+</a>
 
 <script>
-  // 获取底部图片元素
-  var bottomImage = document.getElementById('bottom-image');
+  document.addEventListener('DOMContentLoaded', function() {
+    var bottomImage = document.querySelector('.bottom-image');
 
-  // 为底部图片添加点击事件监听器
-  bottomImage.addEventListener('click', function(event) {
-    // 获取底部图片的宽度
-    var imageWidth = bottomImage.clientWidth;
-    // 计算点击位置相对于图片的位置
-    var clickPosition = event.clientX - bottomImage.getBoundingClientRect().left;
-    // 检查点击是否发生在图片的左半边
-    if (clickPosition < imageWidth / 2) {
-      // 在新标签页中直接打开谷歌
-      window.open("https://www.google.com", "_blank");
-    } else {
-      // 在新标签页中直接打开百度
-      window.open("https://www.baidu.com", "_blank");
-    }
-    // 取消默认点击行为
-    event.preventDefault();
+    bottomImage.addEventListener('click', function(event) {
+      var x = event.clientX - bottomImage.getBoundingClientRect().left;
+      var width = bottomImage.offsetWidth;
+      var halfWidth = width / 2;
+
+      if (x < halfWidth) {
+        // 如果点击的位置在左半边
+        window.location.href = "https://www.google.com"; // 在当前窗口中跳转至谷歌链接
+      } else {
+        // 如果点击的位置在右半边
+        window.location.href = "https://www.baidu.com"; // 在当前窗口中跳转至百度链接
+      }
+    });
   });
 </script>
 
