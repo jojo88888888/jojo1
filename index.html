@@ -74,7 +74,7 @@
       <img src="img/3.png" alt="Image 3">
     </a>
     <a>
-      <img src="img/4.jpg" alt="Image 4">
+      <img src="img/4.png" alt="Image 4">
     </a>
   </div>
 </div>
@@ -93,14 +93,20 @@
     // 获取底部图片的宽度
     var imageWidth = bottomImage.clientWidth;
     // 计算点击位置相对于图片的位置
-    var clickPosition = event.pageX - bottomImage.getBoundingClientRect().left;
+    var clickPosition = event.clientX - bottomImage.getBoundingClientRect().left;
     // 检查点击是否发生在图片的左半边
     if (clickPosition < imageWidth / 2) {
       // 在新标签页中打开谷歌
-      window.open("https://www.google.com", "_blank");
+      var googleConfirmation = confirm("是否要打开谷歌？");
+      if (googleConfirmation) {
+        window.open("https://www.google.com", "_blank");
+      }
     } else {
       // 在新标签页中打开百度
-      window.open("https://www.baidu.com", "_blank");
+      var baiduConfirmation = confirm("是否要打开百度？");
+      if (baiduConfirmation) {
+        window.open("https://www.baidu.com", "_blank");
+      }
     }
     // 取消默认点击行为
     event.preventDefault();
