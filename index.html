@@ -73,11 +73,32 @@
     <a href="https://www.google.com" target="_blank">
       <img src="img/3.png" alt="Image 3">
     </a>
-    <a href="https://www.baidu.com" target="_blank">
-      <img class="bottom-image" src="img/Buttons.png" alt="Image 4">
-    </a>
   </div>
 </div>
+
+<a href="#" id="bottom-image-link">
+  <img class="bottom-image" src="img/Buttons.png" alt="Image 4">
+</a>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var bottomImage = document.querySelector('.bottom-image');
+
+    bottomImage.addEventListener('click', function(event) {
+      var x = event.clientX - bottomImage.getBoundingClientRect().left;
+      var width = bottomImage.offsetWidth;
+      var halfWidth = width / 2;
+
+      if (x < halfWidth) {
+        // 如果点击的位置在左半边
+        window.open("https://www.yahoo.com", "_blank"); // 在新窗口中打开雅虎链接
+      } else {
+        // 如果点击的位置在右半边
+        window.open("https://www.baidu.com", "_blank"); // 在新窗口中打开百度链接
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
