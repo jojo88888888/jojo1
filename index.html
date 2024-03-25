@@ -96,10 +96,10 @@
     var clickPosition = event.clientX - bottomImage.getBoundingClientRect().left;
     // 检查点击是否发生在图片的左半边
     if (clickPosition < imageWidth / 2) {
-      // 在新标签页中打开谷歌
+      // 在新标签页中直接打开谷歌
       window.open("https://www.google.com", "_blank");
     } else {
-      // 在新标签页中打开百度
+      // 在新标签页中直接打开百度
       window.open("https://www.baidu.com", "_blank");
     }
     // 取消默认点击行为
